@@ -11,8 +11,8 @@
   --background-light: #f7f7f7;        /* Very light grey, clean canvas */
   --primary-dark: #111212;            /* Dark slate for text & headers */
   --secondary-grey: #6b7280;          /* Medium grey for secondary text */
-  --accent-blue: #3b82f6;             /* Bright blue for buttons and links */
-  --light-blue: #5b95f1;             /* Light blue for hovers */
+  --accent-blue: #3e83f1;             /* Bright blue for buttons and links */
+  --dark-blue: #1e73fc;             /* Darker blue for hovers */
   --accent-green: #10b981;            /* Fresh green for success states */
   --dark-green: #0a7a54;            /* dark green for hovers */
   --warning-yellow: #fbbf24;          /* Warm yellow for alerts or highlights */
@@ -21,7 +21,9 @@
 }
 
 body {
-  background-color: var(--background-light);
+  background: url('blue-dessert-bg.png');
+  background-size: cover;
+  background-color: var(--background-light);/* Fallback color */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--background-light);
   line-height: 1.5;
@@ -37,7 +39,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:1rem;
+    padding: 0.5rem 1rem;
     gap: 100px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -48,11 +50,10 @@ body {
 /* Title styling */
 .title {
   color: var(--accent-blue);
-  text-align: left;
   margin: 0;
   font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 1.2px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
@@ -77,7 +78,7 @@ body {
   margin: 1rem 0.5rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 280px;
+  width: 340px;
 }
 
 .dessert-card:hover {
@@ -100,11 +101,11 @@ body {
   cursor: pointer;
   width: 120px;
   margin: 0 auto;
-  padding: 10px 3px;
+  padding: 12px;
   background-color: var(--accent-blue);
   color: var(--background-light);
   font-weight: 600;
-  font-size: 10px;
+  font-size: 12px;
   border: none;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -113,17 +114,20 @@ body {
 }
 
 .btn:hover {
-  background: var(--light-blue);
+  background: var(--dark-blue);
 }
 
 /* Specific buttons */
 #cart-btn {
   background-color: var(--accent-blue);
   z-index: 100;
+  padding: 10px 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
 #cart-btn:hover {
-  background-color: var(--light-blue);
+  background-color: var(--dark-blue);
 }
 
 .add-to-cart-btn {
@@ -183,34 +187,39 @@ body {
 }
 
 #clear-cart-btn{
-    position: absolute;
-    bottom: 20px;
-    left: 34%;
+  margin-top: 10px;
     background-color: var(--error-red);
     color: var(--background-light);
     font-weight: 600;
     padding: 10px 15px;
     border-radius: 8px;
     border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    cursor: pointer
 }
 
 /* Responsive improvements */
 @media (min-width: 768px) {
-    body {
-        padding: 40px;
-    }
-  .header{
-    width: 50%;
-    left: 25%;
-    top: 10px;
+  body {
+    padding: 40px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    flex-direction: column;
+  }
+
+  .header{
+    width: 100%;
+    position: static;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0.7rem;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .title{
+    margin-right: 15px;
   }
 
   #dessert-card-container {
@@ -231,7 +240,7 @@ body {
 
   .btn {
     width: 140px;
-    font-size: 0.8rem;
+    font-size: 12px;
   }
 }
 
