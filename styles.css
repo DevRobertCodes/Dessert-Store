@@ -20,6 +20,16 @@
   --white: #ffffff;                   /* Crisp white for cards, modals */
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(91, 149, 241, 0.2); /* Blue overlay */
+  z-index: -1;
+}
+
 body {
   background: url('blue-dessert-bg.png');
   background-size: cover;
