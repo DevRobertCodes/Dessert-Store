@@ -1,0 +1,238 @@
+/* Reset and base styling */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-light: #f7f7f7;        /* Very light grey, clean canvas */
+  --primary-dark: #111212;            /* Dark slate for text & headers */
+  --secondary-grey: #6b7280;          /* Medium grey for secondary text */
+  --accent-blue: #3b82f6;             /* Bright blue for buttons and links */
+  --light-blue: #5b95f1;             /* Light blue for hovers */
+  --accent-green: #10b981;            /* Fresh green for success states */
+  --dark-green: #0a7a54;            /* dark green for hovers */
+  --warning-yellow: #fbbf24;          /* Warm yellow for alerts or highlights */
+  --error-red: #ef4444;               /* Clean red for errors */
+  --white: #ffffff;                   /* Crisp white for cards, modals */
+}
+
+body {
+  background-color: var(--background-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--background-light);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Header styling */
+.header{
+    position: fixed;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem;
+    gap: 100px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: var(--background-light);
+    z-index: 100000;
+}
+
+/* Title styling */
+.title {
+  color: var(--accent-blue);
+  text-align: left;
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Dessert cards container */
+#dessert-card-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding: 2px;
+}
+
+/* Each dessert card */
+.dessert-card {
+  background-color: var(--background-light);
+  padding: 20px 25px;
+  color: var(--primary-dark);
+  text-align: center;
+  border-radius: 15px;
+  margin: 1rem 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 280px;
+}
+
+.dessert-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Price styling */
+.dessert-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin: 10px 0 15px;
+  letter-spacing: 0.05em;
+}
+
+/* Button base */
+.btn {
+  display: block;
+  cursor: pointer;
+  width: 120px;
+  margin: 0 auto;
+  padding: 10px 3px;
+  background-color: var(--accent-blue);
+  color: var(--background-light);
+  font-weight: 600;
+  font-size: 10px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: var(--light-blue);
+}
+
+/* Specific buttons */
+#cart-btn {
+  background-color: var(--accent-blue);
+  z-index: 100;
+}
+
+#cart-btn:hover {
+  background-color: var(--light-blue);
+}
+
+.add-to-cart-btn {
+  margin: 30px auto 10px;
+}
+
+/* Cart container styling */
+#cart-container {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  color: var(--primary-dark);
+  background-color: var(--background-light);
+  width: 320px;
+  height: 500px;
+  border: 6px double var(--black);
+  border-radius: 20px;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1.15rem;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 90;
+}
+
+/* Individual products in cart */
+.product {
+  margin: 20px 0;
+  font-weight: 500;
+  color: var(--primary-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--primary-dark) 1.5px solid;
+}
+
+.product-count {
+  display: inline-block;
+  margin-right: 12px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  min-width: 30px;
+}
+
+.product-category {
+  margin: 12px 0;
+  font-style: italic;
+  color: var(--primary-dark);
+}
+
+#products-container p{
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+    display: flex;
+    color: var(--primary-dark);
+}
+
+#clear-cart-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 34%;
+    background-color: var(--error-red);
+    color: var(--background-light);
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive improvements */
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+  .header{
+    width: 50%;
+    left: 25%;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  #dessert-card-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .dessert-card {
+    flex: 1 0 21%;
+    max-width: 280px;
+  }
+
+  #cart-container {
+    width: 360px;
+    height: 480px;
+  }
+
+  .btn {
+    width: 140px;
+    font-size: 0.8rem;
+  }
+}
+
+

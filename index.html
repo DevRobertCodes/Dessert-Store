@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dessert Store</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+        <div class="header">
+          <h1 class="title">Desserts Store</h1>
+          <button id="cart-btn" type="button" class="btn">
+            <span id="show-hide-cart">Show</span> Cart
+          </button>
+        </div>
+    </header>
+    <main>
+      <div id="cart-container">
+        <div id="products-container"></div>
+        <p>Total number of items: <span id="total-items">0</span></p>
+        <p>Subtotal: <span id="subtotal">$0</span></p>
+        <p>Taxes: <span id="taxes">$0</span></p>
+        <p>Total: <span id="total">$0</span></p>
+        <button class="btn" id="clear-cart-btn">Clear Cart</button>
+      </div>
+      <div id="dessert-card-container"></div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
