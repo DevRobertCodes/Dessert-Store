@@ -36,8 +36,6 @@ body {
   justify-content: center;
   flex-direction: column;
   margin: 0;
-  background: url('blue-dessert-bg.png');
-  background-size: cover;
   background-color: var(--background-light);/* Fallback color */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--background-light);
